@@ -70,4 +70,9 @@ def increasing(list):
     first = list[0]
     mid = list[1]
     last = list[2]
-    if mid 
+    if mid < first and last < mid:
+        return True
+    else:
+        return False
+print("INCREASING")
+print(increasing([1, 2, 3]))
