@@ -1,5 +1,5 @@
 def make_abc():
-    return ["a, b, c"]
+    return ["a", "b", "c"]
 
 print("MAKE ABC")
 print(make_abc())
@@ -70,9 +70,77 @@ def increasing(list):
     first = list[0]
     mid = list[1]
     last = list[2]
-    if mid < first and last < mid:
+    if mid > first and last > mid:
         return True
     else:
         return False
 print("INCREASING")
 print(increasing([1, 2, 3]))
+print(increasing([5, 5, 5]))
+print(increasing([-1, 0, 1]))
+print(increasing([3, 3, 3]))
+print(increasing([4, 5, 6]))
+
+def all_true(list):
+    if list[0] == True and list[1] == True and list[2] == True:
+        return True
+    else:
+        return False
+print("ALL TRUE")
+print(all_true([True, False, True]))
+print(all_true([False, False, False]))
+print(all_true([True, True, True]))
+print(all_true([False, True, False]))
+print(all_true([True, False, False]))
+
+def mostly_true(list):
+    if list[0] == True and list[1] == True:
+        return True
+    elif list[1] == True and list[2] == True:
+        return True
+    elif list[0] == True and list[2] == True:
+        return True
+    else:
+        return False
+print("MOSTLY TRUE")
+print(mostly_true([True, False, True]))
+print(mostly_true([False, False, False]))
+print(mostly_true([True, True, True]))
+print(mostly_true([False, False, True]))
+print(mostly_true([True, False, False]))
+
+def make_copy(items):
+    copy = items
+    return copy
+print("MAKE COPY")
+original_list = [3, 4, 5]
+new_list = make_copy(original_list)
+print("og: ", original_list, "new: ", new_list)
+
+def repeat_thrice(number):
+    list1 = [number, number, number]
+    return list1
+print("REPEAT THRICE")
+print(repeat_thrice(-1))
+print(repeat_thrice(5))
+
+def make_reversed_copy(numbers):
+    list1 = [numbers[2], numbers[1], numbers[0]]
+    return list1
+print("MAKE REVERSED COPY")
+original_list = [1, 2, 3]
+new_list = make_reversed_copy(original_list)
+print("og: ", original_list, "new: ", new_list)
+
+def reverse_in_place(numbers):
+    one = numbers[2]
+    two = numbers[1]
+    three = numbers[0]
+    numbers[0] = one
+    numbers[1] = two
+    numbers[2] = three
+    return numbers
+print("REVERSE IN PLACE")
+original_list = [1, 2, 3]
+new_list = reverse_in_place(original_list)
+print("og: ", original_list, "new: ", new_list)
