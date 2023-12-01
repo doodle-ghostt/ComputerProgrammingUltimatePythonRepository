@@ -39,3 +39,53 @@ def average_act_score(list):
 
 print("AVERAGE ACT")
 print(average_act_score([20, 18, 32, 60, 29, 101, 0]))
+
+def all_true(Booleans):
+    for boolean in Booleans:
+        if boolean == False:
+            return False
+    return True
+print("ALL TRUE")
+print(all_true([True, True, True, True, True]))
+print(all_true([True, False, True, True, True]))
+print(all_true([True, True, True, True, False]))
+print(all_true([False, True, True, True, True]))
+print(all_true([False, False, False, False]))
+
+def any_true(booleans):
+    for boolean in booleans:
+        if boolean == True:
+            return True
+    return False
+print("ANY TRUE")
+print(any_true([True, False, False]))
+print(any_true([False, False, False]))
+print(any_true([False, False, True]))
+
+def mostly_true(booleans):
+    count_true = 0
+    count_false = 0
+    for boolean in booleans:
+        if boolean == True:
+            count_true = count_true + 1
+        else:
+            count_false =  count_false + 1
+    if count_true > count_false:
+        return True
+    else:
+        return False
+print("MOSTLY TRUE")
+print(mostly_true([True, False, False]))
+print(mostly_true([False, False, False]))
+print(mostly_true([False, True, True]))
+
+def has_vowel(characters):
+    for character in characters:
+        if character in ["a", "e", "i", "o", "u"]:
+            return True
+    return False
+print("HAS VOWEL")
+print(has_vowel(["a", "b", "n", "b", "b" ]))
+print(has_vowel(["k", "b", "n", "b", "b" ]))
+print(has_vowel(["f", "b", "n", "u", "b" ]))
+print(has_vowel(["e", "s", "o", "i", "a" ]))
