@@ -111,3 +111,63 @@ has_vowel:
     output: false
   - input: [[]]
     output: false
+
+all_the_same:
+  - input: [[1, 1, 1]]
+    output: true
+  - input: [[1, 2, 3]]
+    output: false
+  - input: [[5]]
+    output: true
+  - input: [[2, 2, 2, 2, 2]]
+    output: true
+  - input: [[1, 1, 1, 2]]
+    output: false
+
+increasing:
+  - input: [[1, 2, 3]]
+    output: true
+  - input: [[3, 2, 1]]
+    output: false
+  - input: [[1, 1, 2]]
+    output: false
+  - input: [[1, 2, 3, 4, 5]]
+    output: true
+  - input: [[5, 4, 3, 2, 1]]
+    output: false
+
+is_incrementing:
+  - input: [[1, 2, 3]]
+    output: true
+  - input: [[1, 3, 5]]
+    output: false
+  - input: [[2, 3, 5]]
+    output: false
+  - input: [[1, 2, 3, 4, 5]]
+    output: true
+  - input: [[2, 3, 4, 6, 7]]
+    output: false
+
+has_adjacent_repeat:
+  - input: [[1, 2, 2, 3]]
+    output: true
+  - input: [[1, 2, 3, 4]]
+    output: false
+  - input: [[1, 1]]
+    output: true
+  - input: [[1, 2, 3, 3, 4, 5]]
+    output: true
+  - input: [[1, 2, 3, 4, 5, 6]]
+    output: false
+
+sum_with_skips:
+  - input: [[1, 2, 3, -1, 4, 5, 6, -1, 7]]
+    output: 13
+  - input: [[1, -1, 2, -1, 3]]
+    output: 4
+  - input: [[-1, 1, 2, 3, -1]]
+    output: 0
+  - input: [[1, 2, 3, -1, 4, 5, -1, 6, 7, 8]]
+    output: 27
+  - input: [[1, -1, 2, 3, -1, 4, 5]]
+    output: 10
