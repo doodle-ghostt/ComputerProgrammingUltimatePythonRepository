@@ -60,7 +60,8 @@ def to_camel_case(string):
         if letter == " ":
             is_upper = True
         elif is_upper == True:
-            result += (letter).upper
+            result += letter.upper()
+            is_upper = False
         else:
             result += letter
     return result
@@ -76,7 +77,7 @@ def to_snake_case(string):
 
 def without_duplicates(list1):
     prev = list1[0]
-    result = list1[0]
+    result = [list1[0]]
     for number in list1[1:]:
         if number != prev:
             result.append(number)
@@ -85,7 +86,7 @@ def without_duplicates(list1):
             prev = number
     return result
 
-def filter_valid_act_score(scores):
+def filter_valid_act_scores(scores):
     result = []
     for score in scores:
         if score <= 36 and score >= 1:
