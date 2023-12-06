@@ -38,10 +38,11 @@ def alternate_case(string):
     is_upper = False
     for letter in string:
         if is_upper == False:
-            result += (letter).upper
+            result += letter.upper()
             is_upper = True
-        if is_upper == True:
-            result += (letter).lower
+        elif is_upper == True:
+            result += letter.lower()
+            is_upper = False
     return result
 
 def remove_vowels(string):
