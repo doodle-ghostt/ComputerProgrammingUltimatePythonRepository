@@ -50,7 +50,7 @@ class TestFunctions(unittest.TestCase):
     def test_in_alphabetical_order(self):
         execute_test(self, main, "in_alphabetical_order", self.data)
 
-    def test_alternating_case(self):
+    def test_alterate_case(self):
         execute_test(self, main, "alternating_case", self.data)
 
     def test_remove_vowels(self):
