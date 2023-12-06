@@ -32,3 +32,62 @@ def in_alphabetical_order(word):
             if letter < prev:
                 return False
     return True
+
+def alternate_case(string):
+    result = ""
+    is_upper = False
+    for letter in string:
+        if is_upper == False:
+            result += (letter).upper
+            is_upper = True
+        if is_upper == True:
+            result += (letter).lower
+    return result
+
+def remove_vowels(string):
+    result = ""
+    for letter in string:
+        if letter in "aeiou":
+            pass
+        else:
+            result += letter
+    return result
+
+def to_camel_case(string):
+    result = ""
+    is_upper = False
+    for letter in string:
+        if letter == " ":
+            is_upper = True
+        elif is_upper == True:
+            result += (letter).upper
+        else:
+            result += letter
+    return result
+
+def to_snake_case(string):
+    result = ""
+    for letter in string:
+        if letter == " ":
+            result += "_"
+        else:
+            result += letter
+    return result
+
+def without_duplicates(list1):
+    prev = list1[0]
+    result = list1[0]
+    for number in list1[1:]:
+        if number != prev:
+            result.append(number)
+            prev = number
+        else:
+            prev = number
+    return result
+
+def filter_valid_act_score(scores):
+    result = []
+    for score in scores:
+        if score <= 36 and score >= 1:
+            result.append(score)
+    return result
