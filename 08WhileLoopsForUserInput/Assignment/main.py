@@ -59,10 +59,12 @@ vending_machine()
 def hangman():
     word = input("Player 1 please input a word: ")
     guess = ""
-    show = " "
-    print("".center(len(word), "_"))
+    show = "_" * len(word)
+    guessed = []
+    print(board)
     while guess != word:
         print("guess a letter(l) or guess a word(w)?")
         if input() == "l":
             guess = input()
-            if guess in word:
+            for letter in word:
+                if guess == letter:
