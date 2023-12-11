@@ -1,4 +1,5 @@
 import random
+import os
 def number_guesser():
     number = random.randint(1, 10)
     guess = ""
@@ -54,17 +55,40 @@ def vending_machine():
         elif coin in [5, 10, 25]:
             charge -= coin
     
-vending_machine()
+
         
 def hangman():
     word = input("Player 1 please input a word: ")
     guess = ""
-    show = "_" * len(word)
-    guessed = []
-    print(board)
-    while guess != word:
-        print("guess a letter(l) or guess a word(w)?")
-        if input() == "l":
-            guess = input()
-            for letter in word:
-                if guess == letter:
+    board = "_" * len(word)
+    board = list(board)
+    lives = len(word)
+    os.system('cls')
+    print(str(board).replace("[", "").replace("]", "").replace("'", "").replace(",", ""))
+    while lives > 0 and guess != word:
+        g = input("guess a letter (l) or guess the word(w)? ")
+        if g == "l":
+            i = input("letter: ")
+            if i not in word:
+                lives -= 1
+                print("You have", lives, "lives remaining")
+            else:
+                for char in range(0, len(word)):
+                    if word[char] == i:
+                        board[char] = i
+            print(str(board).replace("[", "").replace("]", "").replace("'", "").replace(",", ""))
+        elif g == "w":
+            i = input("word: ")
+            if i != word:
+                lives -= 1
+                print("You have", lives, "lives remaining")
+            else:
+                guess = word
+        if "_" not in board:
+                guess = word
+    if lives == 0:
+        print("YOU :(")
+        print(word)
+    if guess == word:
+        print("YOU :)")
+hangman()
