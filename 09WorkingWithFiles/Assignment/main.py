@@ -63,7 +63,6 @@ def average_grades(gradebook):
     junior_total = 0
     senior_average = 0
     senior_total = 0
-    
     for row in reader:
         name, gradelevel, percent = row
         if int(gradelevel) == 9:
@@ -79,4 +78,13 @@ def average_grades(gradebook):
             senior_average += int(percent)
             senior_total += 1     
     return freshmen_average/freshmen_total, sophomore_average/sophomore_total, junior_average/junior_total, senior_average/senior_total
-print(average_grades(reader))
+
+
+def failing_seniors(gradebook):
+    names = []
+    for row in reader:
+        name, gradelevel, percent = row
+        if int(gradelevel) == 12 and int(percent) < 60:
+            names.append(name)
+    return names
+print(failing_seniors(reader))
