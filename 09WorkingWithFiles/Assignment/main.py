@@ -33,6 +33,27 @@ def average_word_length(wordlist):
 f = open("../data/gradebook_data.csv", "r")
 reader = csv.reader(f)
 
+def most_common_starting(wordlist):
+    letters = []
+    amount = {}
+    biggest = 0
+    for row in wordlist:
+        letters.append(str(row)[2].lower())
+    for letter in letters:
+        if letter in amount:
+            amount[letter] += 1
+        else:
+            amount.update({letter: 1})
+    for letter in amount:
+        if str(amount[letter]) > str(biggest):
+            biggest = letter
+    return biggest
+    
+
+    
+
+print(most_common_starting(words))
+
 def grade_counter(gradebook): 
     a = 0
     b = 0
@@ -87,4 +108,6 @@ def failing_seniors(gradebook):
         if int(gradelevel) == 12 and int(percent) < 60:
             names.append(name)
     return names
-print(failing_seniors(reader))
+
+
+
