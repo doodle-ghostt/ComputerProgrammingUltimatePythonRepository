@@ -53,7 +53,17 @@ def growth_rates(citylist):
                 fastest_decay = city
     return "decay", fastest_decay["city"], "growth", fastest_growth["city"]
 
-
-
-print(growth_rates(cities))
+def largest_state(citylist):
+    states = {}
+    biggest = 0
+    for city in cities:
+        if city["state"] in states:
+            states[city["state"]] += city["population"]
+        else:
+            states.update({city["state"]: city["population"]})
+    for state in states:
+        if str(states[states[state]]) > str(biggest):
+            biggest = state
+    return biggest 
+print(largest_state(cities))
 

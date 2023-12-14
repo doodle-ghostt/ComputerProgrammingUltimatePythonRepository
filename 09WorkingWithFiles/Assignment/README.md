@@ -33,3 +33,4 @@ Find:
 
 1. Find the state which had the fastest average growth, and the fastest average shrinkage (+)
 
+popul
