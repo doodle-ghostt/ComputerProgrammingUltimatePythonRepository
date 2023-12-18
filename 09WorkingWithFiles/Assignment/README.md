@@ -34,3 +34,7 @@ Find:
 1. Find the state which had the fastest average growth, and the fastest average shrinkage (+)
 
 popul
+
+longest/shortest names
+highest lowest household incomes
+inheritance high/low (income/# of children)
