@@ -1,4 +1,5 @@
-import csv
-import os
-
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+while True:
+    def time():
+        from datetime import datetime
+        return datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    print(time())
